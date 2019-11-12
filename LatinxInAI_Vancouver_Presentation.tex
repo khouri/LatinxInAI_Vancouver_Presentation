@@ -104,17 +104,18 @@ To understand the recommendation training mechanism, another example will be use
 \end{center}
 
 \subsection*{Recommendation as a classification problem}
-The 73 bioinformatics' workflows together with their 280 activities were converted into a matrix $M_{i, j}$. In this matrix, each line corresponds to a workflow and each column to an activity. $M_{i, j} = 1$ means that the workflows \emph{i} has the activity \emph{j}. Otherwise, $M_{i, j} = 0$ means that the workflow \emph{i} does not have the activity \emph{j}. Table~\ref{tabela_matriz_de_dados} presents an fictitious example of a matrix \(M\). To perform the evaluation of the approach, an activity is removed from each row of the table \ref{tabela_matriz_de_dados}, and a list of possible activities is recommended. The goal of the recommendation system is to correctly identify which activity is missing in the workflow (i.e., the one that was removed).
-\begin{center}
-\captionof{figure}{Matrix of scientific workflows}
-\includegraphics[width=0.8\linewidth]{matrizSimples.png}
-\end{center}
+The 73 bioinformatic's workflow's together with their $280$ activities were converted into a matrix $M_{i, j}$. In this matrix (we call it \emph{original dataset}), each line corresponds to a workflow and each column to an activity. $M_{i, j} = 1$ means that the workflows \emph{i} has the activity \emph{j}. Otherwise, $M_{i, j} = 0$ means that the workflow \emph{i} does not have the activity \emph{j}. To perform the evaluation of the approach, an activity is removed from each row of the original dataset, and a list of possible activities is recommended. The goal of the recommendation system is to correctly identify which activity is missing in the workflow (i.e., the one that was removed).
+%\begin{center}
+%\captionof{figure}{Matrix of scientific workflows}
+%\includegraphics[width=0.8\linewidth]{matrizSimples.png}
+%\end{center}
 
-In order to use classification and regression techniques, some changes were proposed in the original dataset (exemplified in the table~\ref{tabela_matriz_de_dados}), which can be viewed in the table~\ref{tabela_matriz_de_dados_adapatada_classificacao_regressao}. Each workflow was replicated \(118\) times. 59 of these correspond to identical copies of the original workflow, while in the other \(59\) one activity was removed from original workflow and a new activity was added representing a possible recommendation. Thus, for each original workflow, there will be \(59\) correct instances and \(59\) incorrect instances and this type of information will be used to train the classifiers or regressors.
+In order to use classification and regression techniques, some changes were proposed in the original dataset, which can be viewed in the table~\ref{tabela_matriz_de_dados_adapatada_classificacao_regressao}. Each workflow was replicated \(118\) times. \(59\) of these correspond to identical copies of the original workflow, while in the other \(59\) one activity was removed from original workflow and a new activity was added representing a possible recommendation. Thus, for each original workflow, there will be \(59\) correct instances and \(59\) incorrect instances and this type of information will be used to train the classifiers or regressors.
 
 \begin{center}\vspace{1cm}
 \captionof{figure}{Adapted matrix of scientific workflows used in classification and regression problems }
 \includegraphics[height=12cm, width=28cm]{matrizAdaptada.png}
+\label{tabela_matriz_de_dados_adapatada_classificacao_regressao}
 \end{center}\vspace{1cm}
 
 %----------------------------------------------------------------------------------------
@@ -122,17 +123,20 @@ In order to use classification and regression techniques, some changes were prop
 %----------------------------------------------------------------------------------------
 
 \section*{Results}
+Our ontology-based approach (FESO) achieved better (or at least equal) results than the previous approaches for almost all of the evaluated metrics. It considers the use of frequency. input. output. and semantic information about the activities. In comparison to the other techniques. its result was higher for all calculated metrics. except \(S@50\) for some techniques. In relation to the FES technique. its result was superior. In particular. part of this improvement is justified by cases where the correct activity has zero frequency in the training set. Since FESO considers the ontology information it is able to recommend activities even if they have zero frequency in the train set. In addition. for the case where there is a tie between two activities considering the input. output. and the frequency criteria. the proposed technique presents an additional factor to be used as a tie breaker.
+
+We were able to identify some trends in these results were. Increasing information on data in the recommendation improves their recommenders performance. as the result of the experiments: 12 and 14 show. A second trend is that the SVM classifier was the only one that obtained a better result than the regressors. indicating that solutions by maximizing space between data in high dimension may be a promising area of study. A third trend is the use of composite classifiers and ensembles which presented promising results. 
 
 \begin{center}\vspace{1cm}
 \includegraphics[height=12cm, width=28cm]{resultados.png}
-\captionof{figure}{\color{Green} Figure caption}
+\captionof{figure}{Comparison between proposed algorithm and the literature techniques}
 \end{center}\vspace{1cm}
 
 %----------------------------------------------------------------------------------------
 %	CONCLUSIONS
 %----------------------------------------------------------------------------------------
 
-\color{SaddleBrown} % SaddleBrown color for the conclusions to make them stand out
+\color{Navy} % SaddleBrown color for the conclusions to make them stand out
 
 \section*{Conclusions}
 
