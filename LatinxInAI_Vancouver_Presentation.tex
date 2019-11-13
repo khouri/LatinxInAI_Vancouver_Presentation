@@ -51,7 +51,7 @@
 \veryHuge \color{NavyBlue} \textbf{An algorithm to recommend activities in scientific workflows:} \color{Black}\\ % Title
 \Huge\textit{An ontology, artificial inteligence and frequency-based approach}\\[2cm] % Subtitle
 \huge \textbf{PhD Candidate Adilson Lopes Khouri \& \\  PhD Luciano Antonio Digiampietri}\\[0.5cm] % Author(s)
-\huge University of São Paulo EACH\\[0.4cm] % University/organization
+%\huge University of São Paulo EACH\\[0.4cm] % University/organization
 \Large \texttt{adilson.khouri.usp@gmail.com} \\
 \Large \texttt{luciano.digiampietri@gmail.com}
 \end{minipage}
@@ -82,13 +82,43 @@ In the workflow management systems, activities are typically represented as grap
 In order to minimize the problem of knowing a large number of activities, several techniques were proposed to recommend activities or to compose workflows. In the first case, which aims to serve an expert user in these systems, during the construction of the workflow, activities are recommended to help to complete the workflow. In the second case, whose goal is to serve a less expert user on these systems, several workflows are built and the user should select which one most satisfies him\/her need.
 \begin{center}
 \captionof{figure}{Techniques of related literature grouped}
-\includegraphics[height=16cm, width=28cm]{GraficoQuantidadeTecnica.eps}
+\includegraphics[height=14cm, width=28cm]{GraficoQuantidadeTecnica.png}
 \end{center}
 
 \color{DarkSlateGray} % DarkSlateGray color for the rest of the content
 
 \section*{Main Contributions}
 
+\subsection*{Recommendation as a classification problem}
+The 73 bioinformatic's workflow's together with their $280$ activities were converted into a matrix $M_{i, j}$. In this matrix (we call it \emph{original dataset}), each line corresponds to a workflow and each column to an activity. $M_{i, j} = 1$ means that the workflows \emph{i} has the activity \emph{j}. Otherwise, $M_{i, j} = 0$ means that the workflow \emph{i} does not have the activity \emph{j}. To perform the evaluation of the approach, an activity is removed from each row of the original dataset, and a list of possible activities is recommended. The goal of the recommendation system is to correctly identify which activity is missing in the workflow (i.e., the one that was removed).
+
+In order to use classification and regression techniques, some changes were proposed in the original dataset, which can be viewed in the table~\ref{tabela_matriz_de_dados_adapatada_classificacao_regressao}. Each workflow was replicated \(118\) times. \(59\) of these correspond to identical copies of the original workflow, while in the other \(59\) one activity was removed from original workflow and a new activity was added representing a possible recommendation. Thus, for each original workflow, there will be \(59\) correct instances and \(59\) incorrect instances and this type of information will be used to train the classifiers or regressors.
+
+\vspace{1cm}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}  \hline
+\textbf{\(\#\)} & \textbf{Workflow} & \textbf{Activ\(\mathbf{01}\)} &  
+\textbf{\(\mathbf{\ldots}\)}  & \textbf{Activ\(\mathbf{280}\)} &\textbf{Class} 				\\ \hline
+1    			& 01   	 		& 1 	   				& \(\ldots\)        & 0     			& T    				\\ \hline
+2    			& 01      		& 1    				& \(\ldots\)        & 0     			& T  	  				\\ \hline
+\(\vdots\)  	& \(\vdots\)    & \(\vdots\)    	& \(\vdots\)       & \(\vdots\)    & \(\vdots\)    	\\ \hline
+59          	& 01     			& 1    				& \(\ldots\)        & 0     			& T             		\\ \hline
+1    			& 01     			& 0 (removed)   & \(\ldots\)        & 0     			& F            		 	\\ \hline
+2   			& 01     			& 0 (removed)   & \(\ldots\)        & 0     			& F            		 	\\ \hline
+\(\vdots\)  	& \(\vdots\)    & \(\vdots\)    	& \(\vdots\)        & \(\vdots\)   & \(\vdots\)    	\\ \hline
+59          	& 01     			& 0 (removed)   & \(\ldots\)        & 1 (added)   & F             		\\ \hline
+1    			& 73     			& 1    				& \(\ldots\)        & 0     			& T             		\\ \hline
+2    			& 73     			& 1    				& \(\ldots\)        & 0     			& T             		\\ \hline
+\(\vdots\)  	& \(\vdots\)    & \(\vdots\)    	& \(\vdots\)        & \(\vdots\)   & \(\vdots\)    	\\ \hline
+59          	& 73     			& 1    				& \(\ldots\)        & 0     			& T             		\\ \hline
+1    			& 73     			& 1 (added)    	& \(\ldots\)        & 0     			& F           			\\ \hline
+2    			& 73     			& 1   					& \(\ldots\)        & 0     			& F             		\\ \hline
+\(\vdots\)  	& \(\vdots\)    & \(\vdots\)    	& \(\vdots\)        & \(\vdots\)   & \(\vdots\)    	\\ \hline
+59          	& 73     			& 1    				& \(\ldots\)        & 1 (added)    & F             		\\ \hline
+\end{tabular}
+\end{center}
+
+\vspace{1cm}
 \subsection*{Recommendation Algorithm}
 The proposed solution recommends activities using three concepts in the area of scientific  workflows: i) frequency of activities; ii) compatibility between input and output; and iii) semantics of activities. 
 
@@ -99,38 +129,49 @@ After calculating the frequency it is necessary to annotate all the workflows, u
 To understand the recommendation training mechanism, another example will be used to simulate a user interacting with the recommendation system. Let us assume that during the construction of the workflow a scientist inserts the \emph{Z} activity and asks for a recommendation. The system will look at the list of activities after \emph{Z} sorted by frequency and ontological concept and will return the recommendation list. The sorting considerrs the ontological concepts serves as a tiebreaker criterion when two activities have the same frequency.
 
 \begin{center}
-\captionof{figure}{Recommendation engine}
-\includegraphics[height=16cm, width=28cm]{draw2.png}
+\captionof{figure}{Proposed recommendation engine}
+\includegraphics[height=16cm, width=28cm]{recEng.png}
 \end{center}
 
-\subsection*{Recommendation as a classification problem}
-The 73 bioinformatic's workflow's together with their $280$ activities were converted into a matrix $M_{i, j}$. In this matrix (we call it \emph{original dataset}), each line corresponds to a workflow and each column to an activity. $M_{i, j} = 1$ means that the workflows \emph{i} has the activity \emph{j}. Otherwise, $M_{i, j} = 0$ means that the workflow \emph{i} does not have the activity \emph{j}. To perform the evaluation of the approach, an activity is removed from each row of the original dataset, and a list of possible activities is recommended. The goal of the recommendation system is to correctly identify which activity is missing in the workflow (i.e., the one that was removed).
-%\begin{center}
-%\captionof{figure}{Matrix of scientific workflows}
-%\includegraphics[width=0.8\linewidth]{matrizSimples.png}
-%\end{center}
 
-In order to use classification and regression techniques, some changes were proposed in the original dataset, which can be viewed in the table~\ref{tabela_matriz_de_dados_adapatada_classificacao_regressao}. Each workflow was replicated \(118\) times. \(59\) of these correspond to identical copies of the original workflow, while in the other \(59\) one activity was removed from original workflow and a new activity was added representing a possible recommendation. Thus, for each original workflow, there will be \(59\) correct instances and \(59\) incorrect instances and this type of information will be used to train the classifiers or regressors.
 
-\begin{center}\vspace{1cm}
-\captionof{figure}{Adapted matrix of scientific workflows used in classification and regression problems }
-\includegraphics[height=12cm, width=28cm]{matrizAdaptada.png}
-\label{tabela_matriz_de_dados_adapatada_classificacao_regressao}
-\end{center}\vspace{1cm}
 
 %----------------------------------------------------------------------------------------
 %	RESULTS 
 %----------------------------------------------------------------------------------------
 
 \section*{Results}
-Our ontology-based approach (FESO) achieved better (or at least equal) results than the previous approaches for almost all of the evaluated metrics. It considers the use of frequency. input. output. and semantic information about the activities. In comparison to the other techniques. its result was higher for all calculated metrics. except \(S@50\) for some techniques. In relation to the FES technique. its result was superior. In particular. part of this improvement is justified by cases where the correct activity has zero frequency in the training set. Since FESO considers the ontology information it is able to recommend activities even if they have zero frequency in the train set. In addition. for the case where there is a tie between two activities considering the input. output. and the frequency criteria. the proposed technique presents an additional factor to be used as a tie breaker.
+Our ontology-based approach (FESO) achieved better (or at least equal) results than the previous approaches for almost all of the evaluated metrics. It considers the use of frequency. input. output. and semantic information about the activities. In comparison to the other techniques. its result was higher for all calculated metrics. In relation to the FES technique. its result was superior. In particular. part of this improvement is justified by cases where the correct activity has zero frequency in the training set. Since FESO considers the ontology information it is able to recommend activities even if they have zero frequency in the train set. In addition. for the case where there is a tie between two activities considering the input. output. and the frequency criteria. the proposed technique presents an additional factor to be used as a tie breaker.
 
 We were able to identify some trends in these results were. Increasing information on data in the recommendation improves their recommenders performance. as the result of the experiments: 12 and 14 show. A second trend is that the SVM classifier was the only one that obtained a better result than the regressors. indicating that solutions by maximizing space between data in high dimension may be a promising area of study. A third trend is the use of composite classifiers and ensembles which presented promising results. 
 
-\begin{center}\vspace{1cm}
-\includegraphics[height=12cm, width=28cm]{resultados.png}
-\captionof{figure}{Comparison between proposed algorithm and the literature techniques}
-\end{center}\vspace{1cm}
+%\begin{center}
+%\includegraphics[height=12cm, width=28cm]{resultados.png}
+%\captionof{figure}{Comparison between proposed algorithm and the literature techniques}
+%\end{center}
+\vspace{1cm}
+\centering
+\begin{tabular}{|l|l|l|l|l|l|} \hline
+\textbf{\(\mathbf{\#}\)} & \textbf{Approach}&\textbf{S@1}&\textbf{S@5} & \textbf{S@10}  & \textbf{MRR} \\ \hline
+		
+1      & Random                             & 0.0037                        & 0.0260                        & 0.0280                         & 0.033          \\ \hline
+2      & \emph{Apriori}    			& 0.0037                        & 0.0385                        & 0.0559                         & 0.037           \\ \hline
+3      & KNN\(_C\)                         & 0.0037                        & 0.0685                        & 0.0959                         & 0.040           \\ \hline
+4      & Neural Network\(_C\)      & 0.0137                         & 0.1507                        & 0.1781                           & 0.089           \\ \hline
+5      & CART\(_C\)                       & 0.0274                        & 0.1233                        & 0.3699                          & 0.113            \\ \hline
+6      & CART\(_R\)                       & 0.1370                         & 0.1370                        & 0.2603                          & 0.114            \\ \hline
+7      & Naive Bayes\(_C\)            & 0.0274                        & 0.1507                        & 0.3425                          & 0.114            \\ \hline
+8      & Binomial\(_R\)                  & 0.0822                        & 0.1918                         & 0.2055                          & 0.136            \\ \hline
+9      & Neural Network\(_R\)      & 0.1096                        & 0.2603                        & 0.2603                          & 0.154            \\ \hline
+10    & MARS\(_R\)                      & 0.1233                        & 0.2055                         & 0.2192                          & 0.167            \\ \hline
+11     & FES                                  & 0.1474                        & 0.2603                         & 0.3699                          & 0.196           \\ \hline
+12    & SVM\(_R\)                        & 0.1233                        & 0.3151                          & 0.4932                          & 0.238           \\ \hline
+13    & SVM\(_C\)                        & 0.2425                        & 0.4658                        & 0.4932                          & 0.244           \\ \hline
+14    & composed SVM\(_C\)     & 0.2515                        & 0.4458                         & 0.5232                          & 0.314            \\ \hline
+15    & Rotation Forest\(_C\)      & 0.2925                        & 0.4558                        & 0.5432                          & 0.324            \\ \hline
+16    & FESO                                & 0.3425                        & 0.4658                        & 0.5932                          & 0.334            \\ \hline
+
+\end{tabular}
 
 %----------------------------------------------------------------------------------------
 %	CONCLUSIONS
@@ -139,18 +180,13 @@ We were able to identify some trends in these results were. Increasing informati
 \color{Navy} % SaddleBrown color for the conclusions to make them stand out
 
 \section*{Conclusions}
-
-\begin{itemize}
-\item This work developed a hybrid technique for recommending activities in scientific workflows, which uses syntactic compatibility, frequency, and domain ontologies to recommend activities, called FESO
-\item We have modeled the recommendation problem as a regression and classification problem in artificial intelligence
-\item As future works. we intend to investigate the use of data provenance to increase the accuracy of the recommendations..
-\end{itemize}
+This work developed a hybrid technique for recommending activities in scientific workflow's, which uses syntactic compatibility, frequency, and domain ontologies to recommend activities, called FESO. Besides that we have modeled the recommendation problem as a regression and classification problem in artificial intelligence. As future work we intend to investigate the use of data provenance to increase the accuracy of the recommendations.
 
 %\color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
 
 \section*{Acknowledgements}
 
-We thank the University of São Paulo (USP) and the CAPES agency wich provided scholarships for the student. Allowing to complete this master with publications in the area of computer science.
+We thank the University of São Paulo and the CAPES wich provided scholarships for the student. 
 
 %----------------------------------------------------------------------------------------
 
