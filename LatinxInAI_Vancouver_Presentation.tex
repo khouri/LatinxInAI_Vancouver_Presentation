@@ -18,7 +18,8 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[40pt, a0, portrait]{a0poster}
+%40pt,
+\documentclass[ a0, portrait]{a0poster}
 
 \usepackage{multicol} % This is so we can have multiple columns of text side-by-side
 \columnsep=100pt % This is the amount of white space between the columns in the poster
@@ -73,16 +74,15 @@
 
 \section*{Introduction}
 
-The number of research projects using intensive computing has been growing in areas that lack advanced computer skills such as biology, physics, and astronomy. One of the tools to assist in the management and construction of intensive computing experiments are the workflows manager systems. \emph{Scientific Workflows} represent structured and ordered processes, constructed manually, semi-automatically or automatically to solve scientific problems using activities, which can be: i) source code blocks; (ii) services; or iii) finished workflows. These systems facilitate the creation of new experiments, sharing of results and reuse of existing activities.
+The number of research projects using intensive computing has been growing in areas that lack advanced computer skills such as biology, physics, and astronomy. One of the tools to assist in the management and construction of intensive computing experiments are the workflow manager systems. \emph{Scientific Workflows} represent structured and ordered processes, constructed manually, semi-automatically or automatically to solve scientific problems using activities, which can be: i) source code blocks; (ii) services; or iii) finished workflows. These systems facilitate the creation of new experiments, sharing of results and reuse of existing activities.
 
-Nowadays, there are a large number of activities available in repositories such as \emph{myExperiment} which stores more than 2,500 workflows and \emph{BioCatalogue} Which provides more than 2,464 services. The large number of activities and the low reuse of some activities and workflows motivate the construction of techniques to recommend activities to the scientists during the composition of workflows.
+Nowadays, there are a large number of activities available in repositories such as \emph{myExperiment} which stores more than$ 2500$ workflows and \emph{BioCatalogue} which provides more than $2464$ services. The large number of activities and the low reuse of some activities and workflows motivate the construction of techniques to recommend activities to the scientists during the composition of workflows.
 
 In the workflow management systems, activities are typically represented as graphical icons with drag and drop functionality. Thus, it is possible to construct computational experiments by dragging icons and filling in input parameters. Most of these systems provide sets of basic activities that can be used in different domains, for example, an activity that calculates the average value of a set of data is applicable in biology, physics, astronomy, and other areas. However, there is a precondition for reusing and\/or creating workflows: knowing the available activities.
 
 In order to minimize the problem of knowing a large number of activities, several techniques were proposed to recommend activities or to compose workflows. In the first case, which aims to serve an expert user in these systems, during the construction of the workflow, activities are recommended to help to complete the workflow. In the second case, whose goal is to serve a less expert user on these systems, several workflows are built and the user should select which one most satisfies him\/her need.
 \begin{center}
-\captionof{figure}{Techniques of related literature grouped}
-\includegraphics[height=14cm, width=28cm]{GraficoQuantidadeTecnica.png}
+\includegraphics[height=15cm, width=28cm]{GraficoQuantidadeTecnica.png}
 \end{center}
 
 \color{DarkSlateGray} % DarkSlateGray color for the rest of the content
@@ -90,9 +90,9 @@ In order to minimize the problem of knowing a large number of activities, severa
 \section*{Main Contributions}
 
 \subsection*{Recommendation as a classification problem}
-The 73 bioinformatic's workflow's together with their $280$ activities were converted into a matrix $M_{i, j}$. In this matrix (we call it \emph{original dataset}), each line corresponds to a workflow and each column to an activity. $M_{i, j} = 1$ means that the workflows \emph{i} has the activity \emph{j}. Otherwise, $M_{i, j} = 0$ means that the workflow \emph{i} does not have the activity \emph{j}. To perform the evaluation of the approach, an activity is removed from each row of the original dataset, and a list of possible activities is recommended. The goal of the recommendation system is to correctly identify which activity is missing in the workflow (i.e., the one that was removed).
+We have downloaded $73$ bioinformatic's workflow's with their $280$ activities (from \emph{myExperiment}) were converted into a matrix $M_{i, j}$. In this matrix (we call it \emph{original dataset}), each line corresponds to a workflow and each column to an activity. $M_{i, j} = 1$ means that the workflows \emph{i} has the activity \emph{j}. Otherwise, $M_{i, j} = 0$ means that the workflow \emph{i} does not have the activity \emph{j}. To perform the evaluation of the approach, an activity is removed from each row of the original dataset, and a list of possible activities is recommended. The goal of the recommendation system is to correctly identify which activity is missing in the workflow (i.e., the one that was removed).
 
-In order to use classification and regression techniques, some changes were proposed in the original dataset, which can be viewed in the table~\ref{tabela_matriz_de_dados_adapatada_classificacao_regressao}. Each workflow was replicated \(118\) times. \(59\) of these correspond to identical copies of the original workflow, while in the other \(59\) one activity was removed from original workflow and a new activity was added representing a possible recommendation. Thus, for each original workflow, there will be \(59\) correct instances and \(59\) incorrect instances and this type of information will be used to train the classifiers or regressors.
+In order to use classification and regression techniques, some changes were proposed in the original dataset, which can be viewed in the next table. Each workflow was replicated \(118\) times. \(59\) of these correspond to identical copies of the original workflow, while in the other \(59\) one activity was removed from original workflow and a new activity was added representing a possible recommendation. Thus, for each original workflow, there will be \(59\) correct instances and \(59\) incorrect instances and this type of information will be used to train the classifiers and the regressors.
 
 \vspace{1cm}
 \begin{center}
@@ -115,40 +115,31 @@ In order to use classification and regression techniques, some changes were prop
 2    			& 73     			& 1   					& \(\ldots\)        & 0     			& F             		\\ \hline
 \(\vdots\)  	& \(\vdots\)    & \(\vdots\)    	& \(\vdots\)        & \(\vdots\)   & \(\vdots\)    	\\ \hline
 59          	& 73     			& 1    				& \(\ldots\)        & 1 (added)    & F             		\\ \hline
-\end{tabular}
+\end{tabular} \label{Tab_matriz_adaptada}
 \end{center}
 
 \vspace{1cm}
 \subsection*{Recommendation Algorithm}
-The proposed solution recommends activities using three concepts in the area of scientific  workflows: i) frequency of activities; ii) compatibility between input and output; and iii) semantics of activities. 
-
-The proposed solution begins by calculating the frequency of occurrence of each pair of existing activities, which is the number of times that an activity \emph{W} occurs immediately after another activity \emph{Z}. By considering only activities that have already been connected (on the dataset of workflows), the output and input compatibility is guaranteed.
+The proposed solution recommends activities using three concepts in the area of scientific workflows: i) frequency of activities; ii) compatibility between input and output; and iii) semantics of activities. The solution begins calculating the frequency of occurrence of each pair of existing activities, which is the number of times that an activity \emph{W} occurs immediately after another activity \emph{Z}. By considering only activities that have already been connected (on the dataset of workflows), the output and input compatibility is guaranteed.
 
 After calculating the frequency it is necessary to annotate all the workflows, using the concepts of the domain ontology, this step was performed manually (not automatically). Finally, the algorithm annotates all activities with the same annotations of their respective workflow; i.e., if the \emph{X} activity is inside two workflows with distinct annotations, then this activity will be related to two different concepts from the ontology. 
 
-To understand the recommendation training mechanism, another example will be used to simulate a user interacting with the recommendation system. Let us assume that during the construction of the workflow a scientist inserts the \emph{Z} activity and asks for a recommendation. The system will look at the list of activities after \emph{Z} sorted by frequency and ontological concept and will return the recommendation list. The sorting considerrs the ontological concepts serves as a tiebreaker criterion when two activities have the same frequency.
-
+To understand the recommendation training mechanism, another example will be used to simulate a user interacting with the recommendation system. Let us assume that during the construction of the workflow a scientist inserts the \emph{Z} activity and asks for a recommendation. The system will look at the list of activities after \emph{Z} sorted by frequency and ontological concept and will return the recommendation list. The sorting considers the ontological concepts serves as a tiebreaker criterion when two activities have the same frequency.
+\vspace{1cm}
 \begin{center}
-\captionof{figure}{Proposed recommendation engine}
 \includegraphics[height=16cm, width=28cm]{recEng.png}
 \end{center}
-
-
-
+\vspace{1cm}
 
 %----------------------------------------------------------------------------------------
 %	RESULTS 
 %----------------------------------------------------------------------------------------
 
 \section*{Results}
-Our ontology-based approach (FESO) achieved better (or at least equal) results than the previous approaches for almost all of the evaluated metrics. It considers the use of frequency. input. output. and semantic information about the activities. In comparison to the other techniques. its result was higher for all calculated metrics. In relation to the FES technique. its result was superior. In particular. part of this improvement is justified by cases where the correct activity has zero frequency in the training set. Since FESO considers the ontology information it is able to recommend activities even if they have zero frequency in the train set. In addition. for the case where there is a tie between two activities considering the input. output. and the frequency criteria. the proposed technique presents an additional factor to be used as a tie breaker.
+Our ontology-based approach (FESO) achieved better (or at least equal) results than the previous approaches for almost all of the evaluated metrics. It considers the use of frequency, input, output and semantic information about the activities, in comparison to the other techniques, its result was higher for all calculated metrics. In relation to the FES technique, its result was superior. In particular, part of this improvement is justified by cases where the correct activity has zero frequency in the training set. Since FESO considers the ontology information it is able to recommend activities even if they have zero frequency in the train set. In addition, for the case where there is a tie between two activities considering the input, output, and the frequency criteria. the proposed technique presents an additional factor to be used as a tie breaker.
 
-We were able to identify some trends in these results were. Increasing information on data in the recommendation improves their recommenders performance. as the result of the experiments: 12 and 14 show. A second trend is that the SVM classifier was the only one that obtained a better result than the regressors. indicating that solutions by maximizing space between data in high dimension may be a promising area of study. A third trend is the use of composite classifiers and ensembles which presented promising results. 
+We were able to identify some trends in these results were. Increasing information on data in the recommendation improves their recommendation performance, as the result of the experiments: $11$ and $16$ show. A second trend is that the SVM classifier was the only one that obtained a better result than the regressors. indicating that solutions by maximizing space between data in high dimension may be a promising area of study. A third trend is the use of composite classifiers and ensembles which presented promising results. 
 
-%\begin{center}
-%\includegraphics[height=12cm, width=28cm]{resultados.png}
-%\captionof{figure}{Comparison between proposed algorithm and the literature techniques}
-%\end{center}
 \vspace{1cm}
 \centering
 \begin{tabular}{|l|l|l|l|l|l|} \hline
@@ -172,7 +163,7 @@ We were able to identify some trends in these results were. Increasing informati
 16    & FESO                                & 0.3425                        & 0.4658                        & 0.5932                          & 0.334            \\ \hline
 
 \end{tabular}
-
+\vspace{1cm}
 %----------------------------------------------------------------------------------------
 %	CONCLUSIONS
 %----------------------------------------------------------------------------------------
@@ -180,7 +171,8 @@ We were able to identify some trends in these results were. Increasing informati
 \color{Navy} % SaddleBrown color for the conclusions to make them stand out
 
 \section*{Conclusions}
-This work developed a hybrid technique for recommending activities in scientific workflow's, which uses syntactic compatibility, frequency, and domain ontologies to recommend activities, called FESO. Besides that we have modeled the recommendation problem as a regression and classification problem in artificial intelligence. As future work we intend to investigate the use of data provenance to increase the accuracy of the recommendations.
+
+This work developed a hybrid technique for recommending activities in scientific workflows which uses syntactic compatibility, frequency, and domain ontologies to recommend activities, called \emph{Frequency Input Output} (FESO, the number $16$ in the table above). Besides that we have modeled the recommendation problem as a regression and classification problem in artificial intelligence. As future work we intend to investigate the use of data provenance to increase the accuracy of the recommendations.
 
 %\color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
 

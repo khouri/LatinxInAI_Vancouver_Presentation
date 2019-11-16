@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.26)  13 NOV 2019 11:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.26)  15 NOV 2019 21:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -29,12 +29,8 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \ykoord=\count89
 \xscale=\count90
 \yscale=\count91
-
-
-Package a0poster Warning: Unknown Option 40pt on input line 85.
-
 \tausch=\dimen103
-(./a0size.sty
+ (./a0size.sty
 File: a0size.sty 1997/05/06 v1.21b a0poster class (GK, MW)
 LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 218.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
@@ -42,8 +38,7 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> OMX/cmex/m/n on input line 218.
 \big@size=\dimen104
-))
-(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/multicol.sty
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2018/04/01 v1.8r multicolumn formatting (FMi)
 \c@tracingmulticols=\count92
 \mult@box=\box26
@@ -268,19 +263,19 @@ Package: wrapfig 2003/01/31  v 3.6
 (./LatinxInAI_Vancouver_Presentation.aux)
 \openout1 = `LatinxInAI_Vancouver_Presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 39.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 40.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -358,10 +353,10 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <74.3> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <51.6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 55.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 54.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 56.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -369,85 +364,74 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 <figures/usp.png, id=1, 742.775pt x 302.12875pt>
 File: figures/usp.png Graphic file (type png)
 <use figures/usp.png>
-Package pdftex.def Info: figures/usp.png  used on input line 59.
+Package pdftex.def Info: figures/usp.png  used on input line 60.
 (pdftex.def)             Requested size: 426.79134pt x 173.60281pt.
 
-Overfull \hbox (5.92456pt too wide) in paragraph at lines 59--60
+Overfull \hbox (5.92456pt too wide) in paragraph at lines 60--61
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
 
-Overfull \hbox (19.72723pt too wide) in paragraph at lines 50--61
+Overfull \hbox (19.72723pt too wide) in paragraph at lines 51--62
 [][] [] 
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <35.83> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 75.
+LaTeX Font Info:    Try loading font information for U+msa on input line 79.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 79.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 <figures/GraficoQuantidadeTecnica.png, id=3, 347.2975pt x 221.82875pt>
 File: figures/GraficoQuantidadeTecnica.png Graphic file (type png)
 <use figures/GraficoQuantidadeTecnica.png>
 Package pdftex.def Info: figures/GraficoQuantidadeTecnica.png  used on input li
 ne 85.
-(pdftex.def)             Requested size: 796.7802pt x 398.36397pt.
+(pdftex.def)             Requested size: 796.7802pt x 426.82022pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <29.86> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
-LaTeX Font Info:    Try loading font information for U+msa on input line 93.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 93.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
-
-
-LaTeX Warning: Reference `tabela_matriz_de_dados_adapatada_classificacao_regres
-sao' on page 1 undefined on input line 95.
-
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
 <figures/recEng.png, id=4, 519.9425pt x 289.08pt>
 File: figures/recEng.png Graphic file (type png)
 <use figures/recEng.png>
-Package pdftex.def Info: figures/recEng.png  used on input line 133.
+Package pdftex.def Info: figures/recEng.png  used on input line 130.
 (pdftex.def)             Requested size: 796.6757pt x 455.26811pt.
-[1
+ [1
 
 
 Non-PDF special ignored!
 <special> papersize=83.96cm,118.82cm
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figur
 es/usp.png> <./figures/GraficoQuantidadeTecnica.png> <./figures/recEng.png>]
-(./LatinxInAI_Vancouver_Presentation.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+(./LatinxInAI_Vancouver_Presentation.aux) ) 
 Here is how much of TeX's memory you used:
- 4498 strings out of 492649
- 67881 string characters out of 6129622
- 216749 words of memory out of 5000000
- 8300 multiletter control sequences out of 15000+600000
- 28542 words of font info for 62 fonts, out of 8000000 for 9000
+ 4489 strings out of 492649
+ 67717 string characters out of 6129622
+ 216774 words of memory out of 5000000
+ 8293 multiletter control sequences out of 15000+600000
+ 25331 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,39p,905b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texli
-ve/2018/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2018/
-texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist
-/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
-e1/urw/times/utmri8a.pfb>
-Output written on LatinxInAI_Vancouver_Presentation.pdf (1 page, 116046 bytes).
+ 41i,9n,38p,904b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/
+fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/cou
+rier/ucrr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8
+a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
+r/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on LatinxInAI_Vancouver_Presentation.pdf (1 page, 116706 bytes).
 
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
