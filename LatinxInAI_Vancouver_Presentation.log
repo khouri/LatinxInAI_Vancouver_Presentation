@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.26)  15 NOV 2019 21:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.26)  18 NOV 2019 17:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -361,11 +361,22 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 56.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<figures/usp.png, id=1, 742.775pt x 302.12875pt>
-File: figures/usp.png Graphic file (type png)
-<use figures/usp.png>
-Package pdftex.def Info: figures/usp.png  used on input line 60.
-(pdftex.def)             Requested size: 426.79134pt x 173.60281pt.
+Package epstopdf Info: Source file: <figures/novos/USP.eps>
+(epstopdf)                    date: 2013-08-03 13:49:06
+(epstopdf)                    size: 19486 bytes
+(epstopdf)             Output file: <figures/novos/USP-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-11-18 17:12:09
+(epstopdf)                    size: 2892 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/novos/USP-eps-conv
+erted-to.pdf figures/novos/USP.eps>
+(epstopdf)             \includegraphics on input line 60.
+Package epstopdf Info: Output file is already uptodate.
+<figures/novos/USP-eps-converted-to.pdf, id=1, 194.7275pt x 194.7275pt>
+File: figures/novos/USP-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/novos/USP-eps-converted-to.pdf>
+Package pdftex.def Info: figures/novos/USP-eps-converted-to.pdf  used on input 
+line 60.
+(pdftex.def)             Requested size: 426.79134pt x 426.80916pt.
 
 Overfull \hbox (5.92456pt too wide) in paragraph at lines 60--61
 [][] 
@@ -392,37 +403,63 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 79.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<figures/GraficoQuantidadeTecnica.png, id=3, 347.2975pt x 221.82875pt>
-File: figures/GraficoQuantidadeTecnica.png Graphic file (type png)
-<use figures/GraficoQuantidadeTecnica.png>
-Package pdftex.def Info: figures/GraficoQuantidadeTecnica.png  used on input li
-ne 85.
-(pdftex.def)             Requested size: 796.7802pt x 426.82022pt.
+Package epstopdf Info: Source file: <figures/novos/QuantidadeTecnica.eps>
+(epstopdf)                    date: 2019-11-18 17:01:20
+(epstopdf)                    size: 27276 bytes
+(epstopdf)             Output file: <figures/novos/QuantidadeTecnica-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2019-11-18 17:04:08
+(epstopdf)                    size: 11227 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/novos/QuantidadeTe
+cnica-eps-converted-to.pdf figures/novos/QuantidadeTecnica.eps>
+(epstopdf)             \includegraphics on input line 85.
+Package epstopdf Info: Output file is already uptodate.
+<figures/novos/QuantidadeTecnica-eps-converted-to.pdf, id=2, 829.0975pt x 436.6
+3126pt>
+File: figures/novos/QuantidadeTecnica-eps-converted-to.pdf Graphic file (type p
+df)
+<use figures/novos/QuantidadeTecnica-eps-converted-to.pdf>
+Package pdftex.def Info: figures/novos/QuantidadeTecnica-eps-converted-to.pdf  
+used on input line 85.
+(pdftex.def)             Requested size: 796.69629pt x 426.78975pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <29.86> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
-<figures/recEng.png, id=4, 519.9425pt x 289.08pt>
-File: figures/recEng.png Graphic file (type png)
-<use figures/recEng.png>
-Package pdftex.def Info: figures/recEng.png  used on input line 130.
-(pdftex.def)             Requested size: 796.6757pt x 455.26811pt.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 101.
+Package epstopdf Info: Source file: <figures/novos/engine.eps>
+(epstopdf)                    date: 2019-11-18 17:01:20
+(epstopdf)                    size: 22294 bytes
+(epstopdf)             Output file: <figures/novos/engine-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2019-11-18 17:04:44
+(epstopdf)                    size: 10796 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/novos/engine-eps-c
+onverted-to.pdf figures/novos/engine.eps>
+(epstopdf)             \includegraphics on input line 131.
+Package epstopdf Info: Output file is already uptodate.
+<figures/novos/engine-eps-converted-to.pdf, id=3, 783.92876pt x 374.39874pt>
+File: figures/novos/engine-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/novos/engine-eps-converted-to.pdf>
+Package pdftex.def Info: figures/novos/engine-eps-converted-to.pdf  used on inp
+ut line 131.
+(pdftex.def)             Requested size: 796.72594pt x 426.8133pt.
  [1
 
 
 Non-PDF special ignored!
 <special> papersize=83.96cm,118.82cm
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figur
-es/usp.png> <./figures/GraficoQuantidadeTecnica.png> <./figures/recEng.png>]
+es/novos/USP-eps-converted-to.pdf> <./figures/novos/QuantidadeTecnica-eps-conve
+rted-to.pdf> <./figures/novos/engine-eps-converted-to.pdf>]
 (./LatinxInAI_Vancouver_Presentation.aux) ) 
 Here is how much of TeX's memory you used:
- 4489 strings out of 492649
- 67717 string characters out of 6129622
- 216774 words of memory out of 5000000
+ 4490 strings out of 492649
+ 68042 string characters out of 6129622
+ 216688 words of memory out of 5000000
  8293 multiletter control sequences out of 15000+600000
  25331 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,38p,904b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,9n,38p,905b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/
 fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publ
@@ -431,11 +468,11 @@ c/amsfonts/cm/cmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/cou
 rier/ucrr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
 r/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on LatinxInAI_Vancouver_Presentation.pdf (1 page, 116706 bytes).
+Output written on LatinxInAI_Vancouver_Presentation.pdf (1 page, 108556 bytes).
 
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+ 56 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
