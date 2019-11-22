@@ -85,8 +85,9 @@ In the workflow management systems, activities are typically represented as grap
 
 In order to minimize the problem of knowing a large number of activities, several techniques were proposed to recommend activities or to compose workflows. In the first case, which aims to serve an expert user in these systems, during the construction of the workflow, activities are recommended to help to complete the workflow. In the second case, whose goal is to serve a less expert user on these systems, several workflows are built and the user should select which one most satisfies him\/her needs.
 \begin{center}
-\Large  \color{darkgreen} Related literature \\
-\vspace{0.5cm}
+\vspace{0.25cm} 
+\large  \color{darkgreen} Related literature \\
+\vspace{0.25cm}
 \includegraphics[height=15cm, width=28cm]{novos/QuantidadeTecnicaVerdeForte.eps}
 \end{center}
 
@@ -99,10 +100,10 @@ In order to use classification and regression techniques, some changes were prop
 
 { 
 \color{darkgreen}
-\vspace{0.5cm}
+\vspace{0.25cm}
 \begin{center}
  \captionof*{table}{ \large \color{darkgreen} Adaptaded matrix for recommendation modeled \\ as  classification/regression problem}
-\vspace{0.5cm}
+\vspace{0.25cm}
 \begin{tabular}{|c|c|c|c|c|c|c|}  \hline
 \textbf{\(\#\)} & \textbf{Workflow} & \textbf{Activ\(\mathbf{01}\)} &  
 \textbf{\(\mathbf{\ldots}\)}  & \textbf{Activ\(\mathbf{280}\)} &\textbf{Class} 				\\ \hline
@@ -133,13 +134,13 @@ The proposed solution recommends activities using three concepts in the area of 
 After calculating the frequency it is necessary to annotate all the workflows, using the concepts of the domain ontology, this step was performed manually (not automatically). Finally, the algorithm annotates all activities with the same annotations of their respective workflow; i.e., if the \emph{X} activity is inside two workflows with distinct annotations, then this activity will be related to two different concepts from the ontology. 
 
 To understand the recommendation training mechanism, another example will be used to simulate a user interacting with the recommendation system. Let us assume that during the construction of the workflow a scientist inserts the \emph{Z} activity and asks for a recommendation. The system will look at the list of activities after \emph{Z} sorted by frequency and ontological concept and will return the recommendation list. The sorting considers the ontological concepts serves as a tiebreaker criterion when two activities have the same frequency.
-\vspace{0.5cm}
+\vspace{0.25cm}
 \begin{center}
-\Large  \color{darkgreen} Proposed solution \\
-\vspace{0.5cm}
+\large  \color{darkgreen} Proposed solution \\
+\vspace{0.25cm}
 \includegraphics[height=15cm, width=28cm]{novos/engineVerdeForte.eps}
 \end{center}
-\vspace{0.5cm}
+\vspace{0.25cm}
 
 %----------------------------------------------------------------------------------------
 %	RESULTS 
@@ -149,13 +150,12 @@ To understand the recommendation training mechanism, another example will be use
 Our ontology-based approach (FESO) achieved better (or at least equal) results than the previous approaches for almost all of the evaluated metrics. It considers the use of frequency, input, output and semantic information about the activities, in comparison to the other techniques, its results were higher for all calculated metrics. Concerning the FES technique, its results were superior. In particular, part of this improvement is justified by cases where the correct activity has zero frequency in the training set. Since FESO considers the ontology information it is able to recommend activities even if they have zero frequency in the train set. In addition, for the cases where there is a tie between two activities considering the input, output, and the frequency criteria, the proposed technique presents an additional factor to be used as a tie breaker.
 
 We were able to identify some trends in these results. Increasing information on data in the recommendation improves their recommendation performance, as the results of the experiments: $11$ and $16$ show. A second trend is that the SVM classifier was the only one that obtained a better result than the regressors. indicating that solutions by maximizing space between data in high dimension may be a promising area of study. A third trend is the use of composite classifiers and ensembles which presented promising results. 
-
 {
 \color{darkgreen}
-\vspace{0.5cm}
+\vspace{0.25cm}
 \begin{center}
 \captionof*{table}{ \large \color{darkgreen} Results of the recommendation modeled as \\ classification/regression problem}
-\vspace{0.5cm}
+\vspace{0.25cm}
 \begin{tabular}{|l|l|l|l|l|l|} \hline
 \textbf{\(\mathbf{\#}\)} & \textbf{Approach}&\textbf{S@1}&\textbf{S@5} & \textbf{S@10}  & \textbf{MRR} \\ \hline
 		
@@ -179,12 +179,7 @@ We were able to identify some trends in these results. Increasing information on
 \end{tabular}
 \end{center}
 }
-\vspace{0.5cm}
-%----------------------------------------------------------------------------------------
-%	CONCLUSIONS
-%----------------------------------------------------------------------------------------
-
-%\color{Navy} % SaddleBrown color for the conclusions to make them stand out
+\vspace{0.25cm}
 
 \section*{Conclusions}
 
