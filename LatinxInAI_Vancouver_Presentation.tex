@@ -37,6 +37,11 @@
 \usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
 \usepackage{wrapfig} % Allows wrapping text around tables and figures
 
+\definecolor{darkgreen}{RGB}{49,79,0}
+
+%\usepackage{microtype}
+%\DisableLigatures{encoding = *, family = *}
+
 \begin{document}
 
 %----------------------------------------------------------------------------------------
@@ -49,18 +54,18 @@
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 
 \begin{minipage}[b]{0.8\linewidth}
-\huge \color{NavyBlue} \textbf{An algorithm to recommend activities in scientific workflows:} \color{Black}\\ % Title
-\LARGE\textit{An ontology, artificial inteligence and frequency-based approach}\\[2cm] % Subtitle
+\Huge \color{darkgreen} \textbf{An algorithm to recommend activities in scientific workflows:} \color{Black}\\ % Title
+\huge\textit{An ontology, artificial inteligence and frequency-based approach}\\[2.5cm] % Subtitle
 \Large \textbf{PhD Candidate Adilson Lopes Khouri \& \\  Associate Professor Luciano Antonio Digiampietri}\\[0.5cm] % Author(s)
 %\huge University of São Paulo EACH\\[0.4cm] % University/organization
-\Large \texttt{adilson.khouri.usp@gmail.com} \\
-\Large \texttt{digiampietri@usp.br}
+\large \texttt{adilson.khouri.usp@gmail.com} \\
+\large \texttt{digiampietri@usp.br}
 \end{minipage}
 \begin{minipage}[b]{0.20\linewidth}
 \includegraphics[width=15cm]{novos/USP.eps}\\
 \end{minipage}
 
-\vspace{1cm} % A bit of extra whitespace between the header and poster content
+\vspace{0.5cm} % A bit of extra whitespace between the header and poster content
 
 %----------------------------------------------------------------------------------------
 
@@ -69,8 +74,6 @@
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
-
-%\color{Navy} % SaddleBrown color for the introduction
 
 \section*{Introduction}
 
@@ -82,11 +85,10 @@ In the workflow management systems, activities are typically represented as grap
 
 In order to minimize the problem of knowing a large number of activities, several techniques were proposed to recommend activities or to compose workflows. In the first case, which aims to serve an expert user in these systems, during the construction of the workflow, activities are recommended to help to complete the workflow. In the second case, whose goal is to serve a less expert user on these systems, several workflows are built and the user should select which one most satisfies him\/her needs.
 \begin{center}
-\includegraphics[height=15cm, width=28cm]{novos/QuantidadeTecnica.eps}
-%\includegraphics[height=15cm, width=28cm]{GraficoQuantidadeTecnica.png}
+\Large  \color{darkgreen} Related literature \\
+\vspace{0.5cm}
+\includegraphics[height=15cm, width=28cm]{novos/QuantidadeTecnicaVerdeForte.eps}
 \end{center}
-
-%\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
 
 \section*{Main Contributions}
 
@@ -95,8 +97,12 @@ We have downloaded $73$ bioinformatic's workflow's with their $280$ activities (
 
 In order to use classification and regression techniques, some changes were proposed in the original dataset, which can be viewed in the next table. Each workflow was replicated \(118\) times. \(59\) of these correspond to identical copies of the original workflow, while in the other \(59\) one activity was removed from the original workflow and a new activity was added representing a possible recommendation. Thus, for each original workflow, there will be \(59\) correct instances and \(59\) incorrect instances and this type of information will be used to train the classifiers and the regressors.
 
-\vspace{1cm}
+{ 
+\color{darkgreen}
+\vspace{0.5cm}
 \begin{center}
+ \captionof*{table}{ \large \color{darkgreen} Adaptaded matrix for recommendation modeled \\ as  classification/regression problem}
+\vspace{0.5cm}
 \begin{tabular}{|c|c|c|c|c|c|c|}  \hline
 \textbf{\(\#\)} & \textbf{Workflow} & \textbf{Activ\(\mathbf{01}\)} &  
 \textbf{\(\mathbf{\ldots}\)}  & \textbf{Activ\(\mathbf{280}\)} &\textbf{Class} 				\\ \hline
@@ -118,19 +124,22 @@ In order to use classification and regression techniques, some changes were prop
 59          	& 73     			& 1    				& \(\ldots\)        & 1 (added)    & F             		\\ \hline
 \end{tabular} \label{Tab_matriz_adaptada}
 \end{center}
+}
+\vspace{0.5cm}
 
-\vspace{1cm}
 \subsection*{Recommendation Algorithm}
 The proposed solution recommends activities using three concepts in the area of scientific workflows: i) frequency of activities; ii) compatibility between input and output; and iii) semantics of activities. The solution begins calculating the frequency of occurrence of each pair of existing activities, which is the number of times that an activity \emph{W} occurs immediately after another activity \emph{Z}. By considering only activities that have already been connected (on the dataset of workflows), the output and input compatibility is guaranteed.
 
 After calculating the frequency it is necessary to annotate all the workflows, using the concepts of the domain ontology, this step was performed manually (not automatically). Finally, the algorithm annotates all activities with the same annotations of their respective workflow; i.e., if the \emph{X} activity is inside two workflows with distinct annotations, then this activity will be related to two different concepts from the ontology. 
 
 To understand the recommendation training mechanism, another example will be used to simulate a user interacting with the recommendation system. Let us assume that during the construction of the workflow a scientist inserts the \emph{Z} activity and asks for a recommendation. The system will look at the list of activities after \emph{Z} sorted by frequency and ontological concept and will return the recommendation list. The sorting considers the ontological concepts serves as a tiebreaker criterion when two activities have the same frequency.
-\vspace{1cm}
+\vspace{0.5cm}
 \begin{center}
-\includegraphics[height=15cm, width=28cm]{novos/engine.eps}
+\Large  \color{darkgreen} Proposed solution \\
+\vspace{0.5cm}
+\includegraphics[height=15cm, width=28cm]{novos/engineVerdeForte.eps}
 \end{center}
-\vspace{1cm}
+\vspace{0.5cm}
 
 %----------------------------------------------------------------------------------------
 %	RESULTS 
@@ -141,8 +150,12 @@ Our ontology-based approach (FESO) achieved better (or at least equal) results t
 
 We were able to identify some trends in these results. Increasing information on data in the recommendation improves their recommendation performance, as the results of the experiments: $11$ and $16$ show. A second trend is that the SVM classifier was the only one that obtained a better result than the regressors. indicating that solutions by maximizing space between data in high dimension may be a promising area of study. A third trend is the use of composite classifiers and ensembles which presented promising results. 
 
-\vspace{1cm}
-\centering
+{
+\color{darkgreen}
+\vspace{0.5cm}
+\begin{center}
+\captionof*{table}{ \large \color{darkgreen} Results of the recommendation modeled as \\ classification/regression problem}
+\vspace{0.5cm}
 \begin{tabular}{|l|l|l|l|l|l|} \hline
 \textbf{\(\mathbf{\#}\)} & \textbf{Approach}&\textbf{S@1}&\textbf{S@5} & \textbf{S@10}  & \textbf{MRR} \\ \hline
 		
@@ -164,7 +177,9 @@ We were able to identify some trends in these results. Increasing information on
 16    & FESO                                & 0.3425                        & 0.4658                        & 0.5932                          & 0.334            \\ \hline
 
 \end{tabular}
-\vspace{1cm}
+\end{center}
+}
+\vspace{0.5cm}
 %----------------------------------------------------------------------------------------
 %	CONCLUSIONS
 %----------------------------------------------------------------------------------------
@@ -174,8 +189,6 @@ We were able to identify some trends in these results. Increasing information on
 \section*{Conclusions}
 
 This work developed a hybrid technique for recommending activities in scientific workflows which uses syntactic compatibility, frequency, and domain ontologies to recommend activities, called \emph{Frequency Input Output} (FESO, the number $16$ in the table above). Moreover, we have modeled the recommendation problem as a regression and classification problem in artificial intelligence. As future work we intend to investigate the use of data provenance to increase the accuracy of the recommendations.
-
-%\color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
 
 \section*{Acknowledgements}
 
