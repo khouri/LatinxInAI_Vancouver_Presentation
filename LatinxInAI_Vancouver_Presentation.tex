@@ -1,19 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% a0poster Portrait Poster
-% LaTeX Template
-% Version 1.0 (22/06/13)
-%
-% The a0poster class was created by:
-% Gerlinde Kettl and Matthias Weiser (tex@kettl.de)
-% 
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
@@ -38,7 +22,7 @@
 \usepackage{wrapfig} % Allows wrapping text around tables and figures
 
 \definecolor{darkgreen}{RGB}{49,79,0}
-
+%
 %\usepackage{microtype}
 %\DisableLigatures{encoding = *, family = *}
 
@@ -57,7 +41,6 @@
 \Huge \color{darkgreen} \textbf{An algorithm to recommend activities in scientific workflows:} \color{Black}\\ % Title
 \huge\textit{An ontology, artificial inteligence and frequency-based approach}\\[2.5cm] % Subtitle
 \Large \textbf{PhD Candidate Adilson Lopes Khouri \& \\  Associate Professor Luciano Antonio Digiampietri}\\[0.5cm] % Author(s)
-%\huge University of São Paulo EACH\\[0.4cm] % University/organization
 \large \texttt{adilson.khouri.usp@gmail.com} \\
 \large \texttt{digiampietri@usp.br}
 \end{minipage}
@@ -96,17 +79,17 @@ In order to minimize the problem of knowing a large number of activities, severa
 \subsection*{Recommendation as a classification problem}
 We have downloaded $73$ bioinformatic's workflow's with their $280$ activities (from \emph{myExperiment}) were converted into a matrix $M_{i, j}$. In this matrix (we call it \emph{original dataset}), each line corresponds to a workflow and each column to an activity. $M_{i, j} = 1$ means that the workflows \emph{i} has the activity \emph{j}. Otherwise, $M_{i, j} = 0$ means that the workflow \emph{i} does not have the activity \emph{j}. To evaluate the approach, an activity is removed from each row of the original dataset, and a list of possible activities is recommended. The goal of the recommendation system is to correctly identify which activity is missing in the workflow (i.e., the one that was removed).
 
-In order to use classification and regression techniques, some changes were proposed in the original dataset, which can be viewed in the next table. Each workflow was replicated \(118\) times. \(59\) of these correspond to identical copies of the original workflow, while in the other \(59\) one activity was removed from the original workflow and a new activity was added representing a possible recommendation. Thus, for each original workflow, there will be \(59\) correct instances and \(59\) incorrect instances and this type of information will be used to train the classifiers and the regressors.
-
+In order to use classification and regression techniques, some changes were proposed in the original dataset, which can be viewed in the next table. Each workflow was replicated \(118\) times. \(59\) of these correspond to identical copies of the original workflow, while in the other \(59\) one activity was removed from the original workflow and a new activity was added representing a possible recommendation. Thus, for each original workflow, there will be \(59\) correct instances and \(59\) incorrect instances and this type of information will be used to train the classifiers and the regressors. 
 { 
 \color{darkgreen}
 \vspace{0.25cm}
 \begin{center}
- \captionof*{table}{ \large \color{darkgreen} Adaptaded matrix for recommendation modeled \\ as  classification/regression problem}
+\captionof*{table}{  \large \color{darkgreen} Adaptaded matrix for recommendation modeled \\ as classification/regression problem}
 \vspace{0.25cm}
-\begin{tabular}{|c|c|c|c|c|c|c|}  \hline
+\begin{tabular}{|l|l|l|l|l|l|l|}  \hline
 \textbf{\(\#\)} & \textbf{Workflow} & \textbf{Activ\(\mathbf{01}\)} &  
 \textbf{\(\mathbf{\ldots}\)}  & \textbf{Activ\(\mathbf{280}\)} &\textbf{Class} 				\\ \hline
+
 1    			& 01   	 		& 1 	   				& \(\ldots\)        & 0     			& T    				\\ \hline
 2    			& 01      		& 1    				& \(\ldots\)        & 0     			& T  	  				\\ \hline
 \(\vdots\)  	& \(\vdots\)    & \(\vdots\)    	& \(\vdots\)       & \(\vdots\)    & \(\vdots\)    	\\ \hline
@@ -123,10 +106,11 @@ In order to use classification and regression techniques, some changes were prop
 2    			& 73     			& 1   					& \(\ldots\)        & 0     			& F             		\\ \hline
 \(\vdots\)  	& \(\vdots\)    & \(\vdots\)    	& \(\vdots\)        & \(\vdots\)   & \(\vdots\)    	\\ \hline
 59          	& 73     			& 1    				& \(\ldots\)        & 1 (added)    & F             		\\ \hline
+
 \end{tabular} \label{Tab_matriz_adaptada}
 \end{center}
 }
-\vspace{0.5cm}
+\vspace{0.25cm}
 
 \subsection*{Recommendation Algorithm}
 The proposed solution recommends activities using three concepts in the area of scientific workflows: i) frequency of activities; ii) compatibility between input and output; and iii) semantics of activities. The solution begins calculating the frequency of occurrence of each pair of existing activities, which is the number of times that an activity \emph{W} occurs immediately after another activity \emph{Z}. By considering only activities that have already been connected (on the dataset of workflows), the output and input compatibility is guaranteed.

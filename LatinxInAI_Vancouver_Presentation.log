@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.26)  22 NOV 2019 11:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.3.26)  22 NOV 2019 11:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -263,19 +263,19 @@ Package: wrapfig 2003/01/31  v 3.6
 (./LatinxInAI_Vancouver_Presentation.aux)
 \openout1 = `LatinxInAI_Vancouver_Presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 29.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -353,10 +353,10 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <61.92> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 57.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <35.83> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 61.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 43.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 44.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -369,34 +369,34 @@ Package epstopdf Info: Source file: <figures/novos/USP.eps>
 (epstopdf)                    size: 2892 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/novos/USP-eps-conv
 erted-to.pdf figures/novos/USP.eps>
-(epstopdf)             \includegraphics on input line 65.
+(epstopdf)             \includegraphics on input line 48.
 Package epstopdf Info: Output file is already uptodate.
 <figures/novos/USP-eps-converted-to.pdf, id=1, 194.7275pt x 194.7275pt>
 File: figures/novos/USP-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/novos/USP-eps-converted-to.pdf>
 Package pdftex.def Info: figures/novos/USP-eps-converted-to.pdf  used on input 
-line 65.
+line 48.
 (pdftex.def)             Requested size: 426.79134pt x 426.80916pt.
 
-Overfull \hbox (5.92456pt too wide) in paragraph at lines 65--66
+Overfull \hbox (5.92456pt too wide) in paragraph at lines 48--49
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--66
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
 
-Overfull \hbox (19.72723pt too wide) in paragraph at lines 56--67
+Overfull \hbox (19.72723pt too wide) in paragraph at lines 40--50
 [][] [] 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 82.
+LaTeX Font Info:    Try loading font information for U+msa on input line 65.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 82.
+LaTeX Font Info:    Try loading font information for U+msb on input line 65.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -412,7 +412,7 @@ eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=figures/novos/QuantidadeTe
 cnicaVerdeForte-eps-converted-to.pdf figures/novos/QuantidadeTecnicaVerdeForte.
 eps>
-(epstopdf)             \includegraphics on input line 91.
+(epstopdf)             \includegraphics on input line 74.
 Package epstopdf Info: Output file is already uptodate.
 <figures/novos/QuantidadeTecnicaVerdeForte-eps-converted-to.pdf, id=2, 828.0937
 5pt x 484.81125pt>
@@ -420,12 +420,12 @@ File: figures/novos/QuantidadeTecnicaVerdeForte-eps-converted-to.pdf Graphic fi
 le (type pdf)
 <use figures/novos/QuantidadeTecnicaVerdeForte-eps-converted-to.pdf>
 Package pdftex.def Info: figures/novos/QuantidadeTecnicaVerdeForte-eps-converte
-d-to.pdf  used on input line 91.
+d-to.pdf  used on input line 74.
 (pdftex.def)             Requested size: 796.70471pt x 426.81276pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <29.86> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 96.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 108.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 90.
 Package epstopdf Info: Source file: <figures/novos/engineVerdeForte.eps>
 (epstopdf)                    date: 2019-11-22 10:57:06
 (epstopdf)                    size: 87965 bytes
@@ -435,7 +435,7 @@ ed-to.pdf>
 (epstopdf)                    size: 30327 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/novos/engineVerdeF
 orte-eps-converted-to.pdf figures/novos/engineVerdeForte.eps>
-(epstopdf)             \includegraphics on input line 141.
+(epstopdf)             \includegraphics on input line 125.
 Package epstopdf Info: Output file is already uptodate.
 <figures/novos/engineVerdeForte-eps-converted-to.pdf, id=3, 783.92876pt x 374.3
 9874pt>
@@ -443,7 +443,7 @@ File: figures/novos/engineVerdeForte-eps-converted-to.pdf Graphic file (type pd
 f)
 <use figures/novos/engineVerdeForte-eps-converted-to.pdf>
 Package pdftex.def Info: figures/novos/engineVerdeForte-eps-converted-to.pdf  u
-sed on input line 141.
+sed on input line 125.
 (pdftex.def)             Requested size: 796.72594pt x 426.8133pt.
  [1
 
@@ -457,7 +457,7 @@ es/novos/USP-eps-converted-to.pdf> <./figures/novos/QuantidadeTecnicaVerdeForte
 Here is how much of TeX's memory you used:
  4491 strings out of 492649
  68164 string characters out of 6129622
- 219391 words of memory out of 5000000
+ 220495 words of memory out of 5000000
  8294 multiletter control sequences out of 15000+600000
  24783 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -470,7 +470,7 @@ c/amsfonts/cm/cmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/cou
 rier/ucrr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
 r/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on LatinxInAI_Vancouver_Presentation.pdf (1 page, 161981 bytes).
+Output written on LatinxInAI_Vancouver_Presentation.pdf (1 page, 161902 bytes).
 
 PDF statistics:
  56 PDF objects out of 1000 (max. 8388607)
